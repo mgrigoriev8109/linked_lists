@@ -3,6 +3,7 @@ require_relative 'linked_list'
 
 first_list = LinkedList.new
 first_node = first_list.append(24)
-second_node = first_list.append(27)
-first_node.next_node = second_node
-puts first_node.next_node
+first_node.print_this_object
+p first_node.currently_points_to
+second_node = first_list.append(27, first_node)
+p first_node.currently_points_to
