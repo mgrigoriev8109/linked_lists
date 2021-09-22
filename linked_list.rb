@@ -1,5 +1,5 @@
 class LinkedList
-  def append(value, node_link = nil)
-    Node.new(value, node_link)
+  def append(value, next_node = nil)
+    Node.new(value, next_node)
   end
 end
