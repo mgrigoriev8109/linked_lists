@@ -1,10 +1,10 @@
 class Node
   attr_reader :value
-  attr_accessor :next_node
+  attr_accessor :node_link
 
-  def initialize(value = nil, next_node = nil)
+  def initialize(value = nil, node_link)
     @value = value
-    @next_node = next_node
+    @node_link = node_link
   end
 
 end

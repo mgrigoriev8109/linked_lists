@@ -1,11 +1,5 @@
-require_relative 'node'
-
 class LinkedList
-  def append(value)
-    Node.new(value)
+  def append(value, node_link = nil)
+    Node.new(value, node_link)
   end
 end
-
-first_list = LinkedList.new
-first_node = first_list.append(24)
-p first_node.value 
