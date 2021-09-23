@@ -1,24 +1,22 @@
 class LinkedList
 
-  attr_accessor :node_size, :head, :tail, :current_node
+  attr_accessor :head, :size
 
-  def initialize(node_size = 0, head = false, tail = false, current_node = false)
-    @node_size = node_size
+  def initialize(head, size = 0, tail)
     @head = head
-    @tail = tail
-    @current_node = current_node
+    @size = size
+    @tail
   end
 
-  def append(value = nil, next_node = nil)
-    #The next step will be recursively calling append to create more current nodes  
-    if @head == false
-        @head = Node.new(value, next_node)
-      elsif @tail == false
-        @tail = Node.new(value, next_node)
-        @head.next_node = @tail
-      else
-        @current_node = @tail
-        @tail = Node.new(value, next_node)
-      end
+  def append(value, next_node = nil)
+    if @size == size
+      @tail = Node.new(value, nil)
+    else # some recursive call to cycle through .next_node repeatedly
+      size += 1   
+      @head.append(value, '.next_node'*size)
   end
 end
+
+to start we create @head, its value is 1 and with @head.next_node == nil
+next, we want to create @head.next_node, with value 2 and @head.next_node.next_node == nil
+next, we want to create @head.next_node.next_node with value 3, and @head.next_node.next_node.next_node == nil
