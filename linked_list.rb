@@ -1,27 +1,24 @@
 class LinkedList
-@node_size = 0
-@head = false
+
+  attr_accessor :node_size, :head, :tail, :current_node
+
+  def initialize(node_size = 0, head = false, tail = false, current_node = false)
+    @node_size = node_size
+    @head = head
+    @tail = tail
+    @current_node = current_node
+  end
 
   def append(value = nil, next_node = nil)
-    if @head == false 
-      @head = Node.new(value, next_node)
-    else
-      Node.new(value, next_node)
-    end
-    @node_size += 1
+    #The next step will be recursively calling append to create more current nodes  
+    if @head == false
+        @head = Node.new(value, next_node)
+      elsif @tail == false
+        @tail = Node.new(value, next_node)
+        @head.next_node = @tail
+      else
+        @current_node = @tail
+        @tail = Node.new(value, next_node)
+      end
   end
-
-  def prepend(value = nil, next_node = nil)
-    @head = Node.new(value, next_node)
-    @node_size += 1
-  end
-
 end
-
-Time to write in pseudocode
-
-I need to created a linked list in Ruby using two classes
-This class, LinkedList will represent the full list
-It creates new instances of the Node class every time append is called
-These new instances will always point to nil when appended
-
