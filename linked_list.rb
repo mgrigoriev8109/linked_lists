@@ -1,22 +1,22 @@
 class LinkedList
 
-  attr_accessor :head, :size
+  attr_accessor :size, :head, :tail
 
-  def initialize(head, size = 0)
-    @head = head
+  def initialize(size = 0, head = nil, tail = nil)
     @size = size
+    @head = head
+    @tail = tail
   end
 
-  def append(value, node_instance = nil)
-    if @size == size
-      node_instance = '@head' + ('.next_node'* size)
-      instance_variable_set(node_instance, Node.new(value, nil))
-    else # some recursive call to cycle through .next_node repeatedly
-      size += 1 
-      node_instance = '@head' + ('.next_node'* size)
-      append(value, node_instance)
+  
+  def append(value)
+    if @size == 0
+      @head = Node.new(value)
+      @size += 1
+    else
+      @tail = Node.new(value)
+      @size += 1
     end
-    @size += 1
   end
 end
 
