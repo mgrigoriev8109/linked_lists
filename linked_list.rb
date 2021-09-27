@@ -1,22 +1,23 @@
 class LinkedList
 
-  attr_accessor :size, :head, :tail
+  attr_accessor :head
 
-  def initialize(size = 0, head = nil, tail = nil)
-    @size = size
+  def initialize(head = nil)
     @head = head
-    @tail = tail
   end
 
-  
+
   def append(value)
-    if @size == 0
+    if @head == nil
       @head = Node.new(value)
-      @size += 1
     else
-      @tail = Node.new(value)
-      @size += 1
+      node = @head
+      until node.next_node == nil
+        node = node.next_node
+      end
+      node.next_node = Node.new(value)
     end
   end
+
 end
 
