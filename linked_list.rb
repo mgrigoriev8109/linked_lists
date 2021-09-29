@@ -19,5 +19,10 @@ class LinkedList
     end
   end
 
+  def prepend(value)
+    node = Node.new(value)
+    node.next_node = @head
+    @head = node
+  end
 end
 
