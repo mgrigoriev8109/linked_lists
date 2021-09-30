@@ -32,7 +32,7 @@ class LinkedList
       count += 1
       node = node.next_node
     end
-    p count
+    count
   end
 
   def head
@@ -69,6 +69,18 @@ class LinkedList
       false if node.next_node.nil?
       node = node.next_node
     end
+  end
+
+  def find(value)
+    index = 0
+    node = @head
+    until index == size
+      return index if node.value == value
+
+      index += 1
+      node = node.next_node
+    end
+    nil
   end
 end
 

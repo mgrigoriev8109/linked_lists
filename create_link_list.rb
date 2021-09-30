@@ -8,4 +8,4 @@ linked_list.append(2)
 linked_list.append(3)
 linked_list.prepend(4)
 linked_list.pop
-p linked_list.contains?(3)
+p linked_list.find(3)
