@@ -39,6 +39,20 @@ class LinkedList
     p @head.value
   end
 
-  
+  def tail
+    node = @head
+    node = node.next_node until node.next_node.nil?
+    p node.value
+  end
+
+  def at(index)
+    count = 0
+    node = @head
+    until index == count
+      node = node.next_node 
+      count += 1
+    end
+    p node.value
+  end
 end
 
