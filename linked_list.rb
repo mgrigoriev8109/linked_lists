@@ -82,5 +82,16 @@ class LinkedList
     end
     nil
   end
+
+  def to_s
+    object_string = ""
+    node = @head
+    until node.next_node.nil?
+      object_string += "#{node.value}"
+      node = node.next_node
+    end
+    object_string = object_string + "#{tail}" + "#{node.next_node}"
+    p object_string
+  end
 end
 
