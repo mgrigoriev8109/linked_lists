@@ -42,7 +42,7 @@ class LinkedList
   def tail
     node = @head
     node = node.next_node until node.next_node.nil?
-    p node.value
+    node.value
   end
 
   def at(index)
@@ -54,5 +54,14 @@ class LinkedList
     end
     p node.value
   end
+
+  def pop
+    node = @head
+    node = node.next_node until node.next_node.next_node.nil?
+    node.next_node = nil
+  end
+
+  
+
 end
 
