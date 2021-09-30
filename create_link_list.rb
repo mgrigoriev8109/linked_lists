@@ -7,4 +7,4 @@ linked_list.append(1)
 linked_list.append(2)
 linked_list.append(3)
 linked_list.prepend(4)
-linked_list.size
+linked_list.head

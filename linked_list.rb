@@ -34,5 +34,11 @@ class LinkedList
     end
     p count
   end
+
+  def head
+    p @head.value
+  end
+
+  
 end
 
